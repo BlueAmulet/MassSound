@@ -1,0 +1,15 @@
+[
+{
+  "modid": "masssound",
+  "name": "MassSound",
+  "description": "JStar MassSound Card for OpenComputers allows playing of minecraft sounds",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["gamax92"],
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
