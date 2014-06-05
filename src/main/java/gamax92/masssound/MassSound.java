@@ -2,7 +2,7 @@ package gamax92.masssound;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -25,21 +25,11 @@ public class MassSound
 	private int masssoundCardID;
     
     @EventHandler
-    public void preInit(FMLPreInitializationEvent event)
-    {
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
-		config.load();
-		masssoundCardID = config.getItem("massSoundCardID", 6527).getInt();
-		config.save();
-    }
-    
-    @EventHandler
     public void init(FMLInitializationEvent event)
     {
-    	masssoundCard = new MassSoundCard(masssoundCardID);
+    	masssoundCard = new MassSoundCard();
     	GameRegistry.registerItem(masssoundCard, "massSound");
-    	LanguageRegistry.addName(masssoundCard, "JStar MassSound");
-    	
+
     	li.cil.oc.api.Driver.add(new DriverMassSoundCard());
     }
 }

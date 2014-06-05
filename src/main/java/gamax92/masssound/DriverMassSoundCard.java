@@ -43,12 +43,14 @@ public class DriverMassSoundCard extends DriverItem
 		@Callback
 		public Object[] playSound(Context context, Arguments args)
 		{
+			if (args.count() > 8)
+				return new Object[]{false, "too many sounds"};
 			for (int i=0; i < args.count(); i++) {
 				if (!args.isString(i))
 					return new Object[]{false, "non string argument"};
 			}
 			for (int i=0; i < args.count(); i++)
-				container.worldObj.playSoundEffect(container.xCoord + 0.5D, container.yCoord + 0.5D, container.zCoord + 0.5D, args.checkString(i), 1, 1);
+				container.getWorldObj().playSoundEffect(container.xCoord + 0.5D, container.yCoord + 0.5D, container.zCoord + 0.5D, args.checkString(i), 1, 1);
 			return new Object[]{true};
 		}
     }
