@@ -1,7 +1,9 @@
 package gamax92.masssound;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -25,11 +27,23 @@ public class MassSound
 	private int masssoundCardID;
     
     @EventHandler
-    public void init(FMLInitializationEvent event)
+    public void preInit(FMLPreInitializationEvent event)
     {
     	masssoundCard = new MassSoundCard();
     	GameRegistry.registerItem(masssoundCard, "massSound");
-
+    }
+    
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+    	GameRegistry.addRecipe(new ItemStack(masssoundCard),
+        	"NM ",
+        	" C ",
+        	'N', Blocks.noteblock,
+        	'M', li.cil.oc.api.Items.get("chip1").createItemStack(1),
+        	'C', li.cil.oc.api.Items.get("card").createItemStack(1)
+        );
+    	
     	li.cil.oc.api.Driver.add(new DriverMassSoundCard());
     }
 }
