@@ -43,6 +43,8 @@ public class DriverMassSoundCard extends DriverItem
 		@Callback
 		public Object[] playSound(Context context, Arguments args)
 		{
+			if (args.count() > 8)
+				return new Object[]{false, "too many sounds"};
 			for (int i=0; i < args.count(); i++) {
 				if (!args.isString(i))
 					return new Object[]{false, "non string argument"};
