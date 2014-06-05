@@ -50,7 +50,30 @@ public class DriverMassSoundCard extends DriverItem
 					return new Object[]{false, "non string argument"};
 			}
 			for (int i=0; i < args.count(); i++)
-				container.worldObj.playSoundEffect(container.xCoord + 0.5D, container.yCoord + 0.5D, container.zCoord + 0.5D, args.checkString(i), 1, 1);
+			{
+				float volume = 1;
+				float pitch = 1;
+				String soundStr = args.checkString(i);
+				if (soundStr.contains(":")) {
+					String[] soundStrSplit = soundStr.split(":");
+					if (soundStrSplit.length > 3)
+					{
+						return new Object[]{false, "too many sound parameters"};
+					}
+					else
+					{
+						try { pitch = (float) Double.parseDouble(soundStrSplit[0]); }
+						catch (NumberFormatException e) { return new Object[]{false, "bad sound parameter"}; }
+						if (soundStrSplit.length == 3)
+						{
+							try { volume = (float) Double.parseDouble(soundStrSplit[1]); }
+							catch (NumberFormatException e) { return new Object[]{false, "bad sound parameter"}; }
+						}
+						soundStr = soundStrSplit[soundStrSplit.length - 1];
+					}
+				}
+				container.getWorldObj().playSoundEffect(container.xCoord + 0.5D, container.yCoord + 0.5D, container.zCoord + 0.5D, soundStr, volume, pitch);
+			}
 			return new Object[]{true};
 		}
     }
