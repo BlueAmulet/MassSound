@@ -54,8 +54,8 @@ public class DriverMassSoundCard extends DriverItem
 				float volume = 1;
 				float pitch = 1;
 				String soundStr = args.checkString(i);
-				if (soundStr.contains(":")) {
-					String[] soundStrSplit = soundStr.split(":");
+				if (soundStr.contains(";")) {
+					String[] soundStrSplit = soundStr.split(";");
 					if (soundStrSplit.length > 3)
 					{
 						return new Object[]{false, "too many sound parameters"};
