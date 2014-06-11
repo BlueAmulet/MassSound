@@ -18,7 +18,7 @@ public class MassSound
 {
     public static final String MODID = "masssound";
     public static final String NAME = "MassSound";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
     
     @Instance
     public static MassSound instance;
