@@ -7,6 +7,6 @@ MassSound Addon for OpenComputers
 
 Takes a Tier1 MicroChip, a Card Base, and a Note Block
 
-[Download 1.6.4](https://dl.dropboxusercontent.com/u/93572794/Mods/MassSound-1.6.4-1.1.jar)
+[Download 1.6.4 (OC 1.3)](https://dl.dropboxusercontent.com/u/93572794/Mods/MassSound-1.6.4-1.1.jar)
 
-[Download 1.7.X](https://dl.dropboxusercontent.com/u/93572794/Mods/MassSound-1.7.2-1.1.jar)
+[Download 1.7.10 (OC 1.4)](https://dl.dropboxusercontent.com/u/93572794/Mods/MassSound-1.7.10-1.1.jar)
