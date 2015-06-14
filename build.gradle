@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.7.10-1.1.1"
+version = "1.8-1.1.1"
 group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "MassSound"
 
@@ -29,12 +29,13 @@ repositories {
 }
 
 minecraft {
-    version = "1.7.10-10.13.2.1291"
+    version = "1.8-11.14.1.1354"
     runDir = "eclipse"
+    mappings = "snapshot_20141130"
 }
 
 dependencies {
-    compile "li.cil.oc:OpenComputers:MC1.7.10-1.5.13.672-dev:dev"
+    compile "li.cil.oc:OpenComputers:MC1.8-1.5.13.171-dev:dev"
 }
 
 processResources

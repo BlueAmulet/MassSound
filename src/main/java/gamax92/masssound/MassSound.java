@@ -1,17 +1,16 @@
 package gamax92.masssound;
 
-import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.common.config.Configuration;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(modid = MassSound.MODID, name = MassSound.NAME, version = MassSound.VERSION, dependencies = "required-after:OpenComputers@[1.5.0,)")
 public class MassSound
@@ -43,7 +42,9 @@ public class MassSound
         	'M', li.cil.oc.api.Items.get("chip1").createItemStack(1),
         	'C', li.cil.oc.api.Items.get("card").createItemStack(1)
         );
-    	
+    	if (event.getSide() == Side.CLIENT) {
+    		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(masssoundCard, 0, new ModelResourceLocation("masssound:massSound", "inventory"));
+    	}
     	li.cil.oc.api.Driver.add(new DriverMassSoundCard());
     }
 }
