@@ -13,12 +13,12 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = MassSound.MODID, name = MassSound.NAME, version = MassSound.VERSION, dependencies = "required-after:OpenComputers@[1.3.0,)")
+@Mod(modid = MassSound.MODID, name = MassSound.NAME, version = MassSound.VERSION, dependencies = "required-after:OpenComputers@[1.5.0,)")
 public class MassSound
 {
     public static final String MODID = "masssound";
     public static final String NAME = "MassSound";
-    public static final String VERSION = "1.1";
+    public static final String VERSION = "1.1.1";
     
     @Instance
     public static MassSound instance;
