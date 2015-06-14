@@ -75,7 +75,7 @@ public class DriverMassSoundCard extends DriverItem
 						soundStr = soundStrSplit[soundStrSplit.length - 1];
 					}
 				}
-				container.world().playSoundEffect(container.xCoord + 0.5D, container.yCoord + 0.5D, container.zCoord + 0.5D, soundStr, volume, pitch);
+				container.world().playSoundEffect(container.xPosition() + 0.5D, container.yPosition() + 0.5D, container.zPosition() + 0.5D, soundStr, volume, pitch);
 			}
 			return new Object[]{true};
 		}
