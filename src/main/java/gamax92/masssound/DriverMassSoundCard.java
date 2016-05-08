@@ -22,11 +22,9 @@ public class DriverMassSoundCard extends DriverItem
 	@Override
 	public ManagedEnvironment createEnvironment(ItemStack stack, EnvironmentHost container)
 	{
-		if (container instanceof TileEntity)
-			return new Environment(container);
-		if (container instanceof TabletWrapper)
-			return new Environment(container);
-		return null;
+		if (container.world() != null && container.world().isRemote)
+			return null;
+		return new Environment(container);
 	}
 
 	@Override
@@ -38,8 +36,8 @@ public class DriverMassSoundCard extends DriverItem
 	public class Environment extends li.cil.oc.api.prefab.ManagedEnvironment {
 		protected EnvironmentHost container = null;
 
-		public Environment(EnvironmentHost container3) {
-			this.container = container3;
+		public Environment(EnvironmentHost container) {
+			this.container = container;
 			this.setNode(Network.newNode(this, Visibility.Neighbors).withComponent("masssound").create());
 		}
 		
