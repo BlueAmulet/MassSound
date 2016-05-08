@@ -1,17 +1,15 @@
 package gamax92.masssound;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import li.cil.oc.api.Network;
-import li.cil.oc.api.driver.EnvironmentHost;
 import li.cil.oc.api.driver.item.Slot;
 import li.cil.oc.api.machine.Arguments;
 import li.cil.oc.api.machine.Callback;
 import li.cil.oc.api.machine.Context;
+import li.cil.oc.api.network.EnvironmentHost;
 import li.cil.oc.api.network.ManagedEnvironment;
 import li.cil.oc.api.network.Visibility;
 import li.cil.oc.api.prefab.DriverItem;
-import li.cil.oc.common.item.TabletWrapper;
 
 public class DriverMassSoundCard extends DriverItem
 {
