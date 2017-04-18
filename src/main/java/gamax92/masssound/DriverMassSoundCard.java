@@ -1,6 +1,9 @@
 package gamax92.masssound;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import li.cil.oc.api.Network;
 import li.cil.oc.api.driver.item.Slot;
 import li.cil.oc.api.machine.Arguments;
@@ -71,7 +74,7 @@ public class DriverMassSoundCard extends DriverItem
 						soundStr = soundStrSplit[soundStrSplit.length - 1];
 					}
 				}
-				container.world().playSoundEffect(container.xPosition() + 0.5D, container.yPosition() + 0.5D, container.zPosition() + 0.5D, soundStr, volume, pitch);
+				container.world().playSound(null, container.xPosition() + 0.5D, container.yPosition() + 0.5D, container.zPosition() + 0.5D, new SoundEvent(new ResourceLocation(soundStr)), SoundCategory.MASTER, volume, pitch);
 			}
 			return new Object[]{true};
 		}

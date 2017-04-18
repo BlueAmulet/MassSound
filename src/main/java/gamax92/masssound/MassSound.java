@@ -1,7 +1,7 @@
 package gamax92.masssound;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -38,7 +38,7 @@ public class MassSound
     	GameRegistry.addRecipe(new ItemStack(masssoundCard),
         	"NM ",
         	" C ",
-        	'N', Blocks.noteblock,
+        	'N', Blocks.NOTEBLOCK,
         	'M', li.cil.oc.api.Items.get("chip1").createItemStack(1),
         	'C', li.cil.oc.api.Items.get("card").createItemStack(1)
         );
